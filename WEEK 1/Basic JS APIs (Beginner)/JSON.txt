@@ -1,0 +1,6 @@
+✅ JSON - if u wanna send data to some other place , u won't send an object...coz not everyone understands it........hence we convert objects into strings and send it.
+
+Two important mehods
+
+JSON.parse
+JSON.stringify

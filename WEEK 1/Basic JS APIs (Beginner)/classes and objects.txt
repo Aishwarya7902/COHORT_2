@@ -1,0 +1,5 @@
+✅ classes (blue print .....just like a map of house)
+
+✅object (real instance ..........just like a building)
+
+✅ static function are not associated with the objects ...but with classes

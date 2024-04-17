@@ -1,0 +1,14 @@
+✅array.push(val)
+//adds element in end
+
+✅arr.pop();
+//removes element from end
+
+✅arr.shift(val);
+//adds element in front
+
+✅arr.unshift()
+//removes element from end
+
+✅arr1.concat(arr2);
+pushes another array in one array

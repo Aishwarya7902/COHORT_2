@@ -1,0 +1,10 @@
+const initialArray= [1,2,3]
+
+function logThings(str){
+    console.log(str);
+}
+
+
+initialArray.forEach(logThings); 
+
+// forEach says tum mujhe callback function de do , mai array ke har ek element pe usko call kar dunga.

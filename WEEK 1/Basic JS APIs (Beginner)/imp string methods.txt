@@ -1,0 +1,29 @@
+✅str.length
+
+✅str.indexOf("world");     
+// gives index of the first occurance of the word
+
+✅str.lastIndexOf("world");        
+// gives index of the last occurance of the word
+
+✅str.slice(2,5);   
+// returns a substring starting from index 2 and ending at index 4
+
+✅s.substr(2,5);   
+// returns a substring starting from index 2 and of length 5
+
+✅str.replace("world" , "JavaScript");  
+// replaces world with JavaScript
+
+✅const value= "Hi I am Aishwarya"
+console.log(value.split(" ");
+//it splits based on a delimeter
+o/p : ['Hi' , 'I' , 'am' , 'Aishwarya']
+
+
+✅str.trim()
+//trims out extra space from beginning and end
+
+✅str.toUpperCase();
+
+✅str.toLowerCase();

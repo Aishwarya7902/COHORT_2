@@ -1,0 +1,13 @@
+✅ Async is a keyword used before a function to make it asynchronous.
+
+✅ How are Asynchronous funtions different than normal functions?
+  -> it always return promises.
+  -> even if it returns a normal value like number,string,float...then also it will be wrapped in a promise and then only returned.
+
+
+✅ Await is a word that is always used inside an asynchronous function.
+
+✅ U can use await infront of a promise, this will return the value of that promise.
+
+✅ Deep dive into async function ( when u use await , then that function is suspeneded untill promise is returned)
+

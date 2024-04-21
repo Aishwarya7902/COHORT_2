@@ -1,0 +1,28 @@
+✅ Earlier , if there were 2 Async operations and they were dependent on each other , we used callbacks for it.
+
+  But...But.........But
+In this method we are blindly trusting some other function to call our function.......But this is not reliable...what if that function doesn't call our callback
+In order to solve this issue , Developer introduced callbacks.
+
+✅ const promise = createOrder(cart)
+
+ this above line returns us an empty promise ....with some data as a property and having undefined value.
+
+   // { 
+        data : undefined;
+      }
+Once the createOreder() API comes back.....undefined is replaced by the returned value.
+
+
+✅ What are promises ?❤️
+
+  -> A promise is a special object that represents eventual completion or failure of an asyn operation.
+  -> A promise has only 3 states pending,fulfilled or rejected.
+  -> Promises are immutable.
+
+✅ What is CallBack Hell ?
+
+  when one API depends on another and then that on another ..and so on and so forth...our code grows horizontally instead of growing vertically. 
+  This is called callback hell.
+
+✅Promise Chaining

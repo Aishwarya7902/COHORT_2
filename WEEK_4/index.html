@@ -9,8 +9,27 @@
     function populateDiv(){
        const a=document.getElementById("firstNumber").value;
        const b=document.getElementById("secondNumber").value;
-       const element =document.getElementById("FinalSum");
-       element.innerHTML=parseInt(a)+parseInt(b);
+       //const element =document.getElementById("FinalSum");
+       fetch("https://475b1613-3889-43f7-83a8-d3af83785eec-00-2hiregyv1wq0p.sisko.replit.dev/sum?a=" + a + "&b=" + b)
+        .then(function(response){
+         response.text()
+          .then(function(ans){
+            document.getElementById("FinalSum").innerHTML=ans;
+        })
+       })
+     //  element.innerHTML=parseInt(a)+parseInt(b);
+    }
+
+    //simpler way
+   async function populateDiv2(){
+       const a=document.getElementById("firstNumber").value;
+       const b=document.getElementById("secondNumber").value;
+       //const element =document.getElementById("FinalSum");
+      const response=await fetch("https://475b1613-3889-43f7-83a8-d3af83785eec-00-2hiregyv1wq0p.sisko.replit.dev/sum?a=" + a + "&b=" + b)
+      const ans= await response.text()
+         
+          document.getElementById("FinalSum").innerHTML=ans;  
+    
     }
 </script>
 <body>

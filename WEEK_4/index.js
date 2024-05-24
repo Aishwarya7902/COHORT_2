@@ -1,3 +1,4 @@
+// paste below code on either replit and get the server link....or deploy it somewhere and get a link
 const express=require('express');
 const app=express();
 

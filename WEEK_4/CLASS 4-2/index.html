@@ -44,18 +44,11 @@
     }
 
     
-      updateState([
-        {
-            title:"Do 4.2",
-            description:"Complete 4.2 from Cohort",
-
-        },
-        {
-            title:"Do 4.3",
-            description:"Complete 4.3 from Cohort",
-
-        }
-      ]);
+      window.setInterval(async function(){
+          const res=await fetch("https://sum-server.100xdevs.com/todos");
+          const json=await res.json();
+          updateState(json.todos);
+      },5000);
     
   </script>
 </body>

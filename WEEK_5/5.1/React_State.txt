@@ -1,0 +1,14 @@
+In React, state refers to an object that holds some information that may change over the lifetime of the component. It is used to store and manage dynamic data in a component.
+
+Key Concepts of State in React:
+ 1.State Initialization:
+
+State is usually initialized in the constructor method of a class component or directly within a function component using the useState hook.
+
+ 2.Updating State:
+
+State should be updated using the setState method in class components or the set function returned by the useState hook in function components.
+
+3.Reactivity:
+
+When state is updated, React re-renders the component to reflect the new state. This makes the UI reactive to state changes.

@@ -1,4 +1,4 @@
-export function Todos({todos}){
+export function Todos({todos,setTodos}){
     return <div>
        {todos.map(function(todo){
         return <div>

@@ -15,8 +15,8 @@ function App() {
 
   return (
     <div>
-      <CreateTodo></CreateTodo>
-      <Todos todos={todos}></Todos>
+      <CreateTodo setTodos={setTodos}></CreateTodo>
+      <Todos todos={todos} setTodos={setTodos}></Todos>
     </div>
   )
 }

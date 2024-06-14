@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function CreateTodo() {
+export function CreateTodo(props) {
     const [title,setTitle]=useState("");
     const [description,setDescription]=useState("");
     return <div>
@@ -30,7 +30,7 @@ export function CreateTodo() {
                     description:description
                 }),
                 headers:{
-                    "contentType":"application/json"
+                    "Content-type":"application/json"
                 }
             })
                 .then(async function (res) {
@@ -38,6 +38,7 @@ export function CreateTodo() {
                     alert("Todo Added!!")
                     
                 })
+                props.setSetTodos
         }}>Add a todo</button>
     </div>
 }

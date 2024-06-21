@@ -4,26 +4,17 @@ import React from 'react';
 
 function App() {
 return <div>
-  <CardWrapper innerComponent={<TextComponent/>}></CardWrapper>
-  <CardWrapper innerComponent={<TextComponent2/>}></CardWrapper>
+  <CardWrapper >
+    Hi There
+  </CardWrapper>
+  
 </div> 
 }
 
-function TextComponent(){
-  return <div>
-     Hi there!
-  </div>
-}
 
-function TextComponent2(){
-  return <div>
-     Hi there2!
-  </div>
-}
-
-function CardWrapper({innerComponent}){
+function CardWrapper({children}){
   return <div style={{border:"2px black solid", padding:20}}>
-    {innerComponent}
+    {children}
   </div>
 }
 

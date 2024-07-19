@@ -8,8 +8,14 @@ function App() {
 
   return (
     <>
-       <div style={{backgroundColor:'black',color:'white'}}>
-         Constant NavBar
+       <div >
+         <button onClick={()=>{
+            window.location.href="/dashboard";
+         }}>DashBoard</button>
+
+         <button onClick={()=>{
+             window.location.href="/";
+         }}>Landing</button>
        </div>
       <BrowserRouter>
         <Routes>

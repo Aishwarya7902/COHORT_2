@@ -1,23 +1,16 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css'
 import { Dashboard } from './components/Dashboard';
 import { Landing } from './components/Landing';
 
 function App() {
 
-
+  
   return (
     <>
-       <div >
-         <button onClick={()=>{
-            window.location.href="/dashboard";
-         }}>DashBoard</button>
-
-         <button onClick={()=>{
-             window.location.href="/";
-         }}>Landing</button>
-       </div>
+       
       <BrowserRouter>
+        <AppBar/>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Landing />} />
@@ -25,6 +18,19 @@ function App() {
       </BrowserRouter>
     </>
   )
+}
+
+function AppBar(){
+  const navigate=useNavigate();
+  return <div >
+  <button onClick={()=>{
+    navigate("/dashboard");
+  }}>DashBoard</button>
+
+  <button onClick={()=>{
+     navigate("/");
+  }}>Landing</button>
+</div>
 }
 
 export default App

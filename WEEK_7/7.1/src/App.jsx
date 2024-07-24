@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { CountContext } from "./context";
 
 
 
@@ -7,27 +8,32 @@ function App() {
 
   return (
     <div>
+      <CountContext.provider value={count}>
+        <Count count={count} setCount={setCount}/>
+      </CountContext.provider>
 
-      <Count count={count} setCount={setCount}/>
+      
       
     </div>
   )
 }
 
-function Count({ count,setCount }) {
+function Count({ setCount }) {
   return <div>
-   <CountRenderer count={count}/>
-   <Buttons count={count} setCount={setCount} />
+   <CountRenderer />
+   <Buttons setCount={setCount} />
   </div>
 }
 
-function CountRenderer({count}){
+function CountRenderer(){
+  const count=1;
   return <div>
     {count}
   </div>
 }
 
-function Buttons({count,setCount}) {
+function Buttons({setCount}) {
+  const count=1;
   return <div>
     <button onClick={() => {
       setCount(count+1)

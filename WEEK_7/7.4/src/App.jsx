@@ -26,9 +26,15 @@ function MainApp() {
       <button>Messaging ({messagingAtomCount})</button>
       <button>Notifications ({notificationsAtomCount})</button>
 
-      <button>Me</button>
+      <ButtonUpdater/>
     </>
   )
+}
+function ButtonUpdater(){
+  const setMessagingAtomCount=useSetRecoilState(messagingAtom)
+  return <button onClick={()=>{
+    setMessagingAtomCount(c=>c+1)
+  }}>Me</button>
 }
 
 export default App

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { jobsAtom, messagingAtom, networkAtom, notificationsAtom } from './atoms'
+import { jobsAtom, messagingAtom, networkAtom, notificationsAtom, totalNotificationSelector } from './atoms'
 import { RecoilRoot, useRecoilValue } from 'recoil'
 
 function App() {
@@ -16,6 +16,7 @@ function MainApp() {
   const jobsAtomCount = useRecoilValue(jobsAtom);
   const notificationsAtomCount = useRecoilValue(notificationsAtom);
   const messagingAtomCount = useRecoilValue(messagingAtom);
+  const totalNotificationsCount=useRecoilValue(totalNotificationSelector)
 
   return (
     <>
@@ -26,15 +27,10 @@ function MainApp() {
       <button>Messaging ({messagingAtomCount})</button>
       <button>Notifications ({notificationsAtomCount})</button>
 
-      <ButtonUpdater/>
+      <button>Me({totalNotificationsCount})</button>
     </>
   )
 }
-function ButtonUpdater(){
-  const setMessagingAtomCount=useSetRecoilState(messagingAtom)
-  return <button onClick={()=>{
-    setMessagingAtomCount(c=>c+1)
-  }}>Me</button>
-}
+
 
 export default App

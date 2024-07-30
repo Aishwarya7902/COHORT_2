@@ -1,23 +1,13 @@
-import { atom, selector } from "recoil";
+import { atom, selector,atomFamily } from "recoil";
 import axios from 'axios'
+import { TODOS } from "./todos";
 
-export const notifications = atom({
-    key: "notifications",
-    default:selector({
-        key:"notificationsSelector",
-        get:async () =>{
-            const res=await axios("https://sum-server.100xdevs.com/notifications")
-            return res.data;
-        }
-    })
-});
-
-
-
-export const totalNotificationSelector = selector({
-    key: "totalNotificationSelector",
-    get: ({ get }) => {
-        const allNotifications = get(notifications)
-        return allNotifications.network + allNotifications.jobs + allNotifications.messaging + allNotifications.notifications;
-    }
+export const todosAtomFamily=atomFamily({
+ key:"todosAtomFamily",
+ default: id => {
+   return TODOS.find(x=> x.id===id)
+ }
 })
+
+
+//atomFamily lets u dynamically create multiple atoms

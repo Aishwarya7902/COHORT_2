@@ -1,39 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import { notifications, totalNotificationSelector } from './atoms'
 import { RecoilRoot, useRecoilValue,useRecoilState } from 'recoil'
-import { useEffect } from 'react'
+import { todosAtomFamily} from './atoms'
 import axios from 'axios'
 
 function App() {
   return <RecoilRoot>
-    <MainApp />
+    <Todo id={1}/>
+    <Todo id={2}/>
   </RecoilRoot>
 }
 
-function MainApp() {
-  const [networkCount,setNetworkCount] = useRecoilState(notifications);
-  const totalNotificationsCount=useRecoilValue(totalNotificationSelector)
-
-  // useEffect(()=>{
-  //   axios.get("https://sum-server.100xdevs.com/notifications")
-  //   .then(res=>{
-  //     setNetworkCount(res.data)
-  //   })
-  // },[])
-
+function Todo({id}) {
+  const todo=useRecoilValue(todosAtomFamily(id))
   return (
     <>
-      <button>Home</button>
-
-      <button>My Network ({networkCount.networks >= 100 ? "99+" : networkCount.network})</button>
-      <button>Jobs ({networkCount.jobs})</button>
-      <button>Messaging ({networkCount.messaging})</button>
-      <button>Notifications ({networkCount.notifications})</button>
-
-      <button>Me({totalNotificationsCount})</button>
+     {todo.title}
+     {todo.description}
+     <br/>
     </>
   )
 }

@@ -7,12 +7,12 @@ import axios from 'axios'
 function App() {
   return <RecoilRoot>
     <Todo id={1}/>
-    <Todo id={2}/>
+    <Todo id={3}/>
   </RecoilRoot>
 }
 
 function Todo({id}) {
-  const todo=useRecoilValue(todosAtomFamily(id))
+  const [todo,setTodo]=useRecoilState(todosAtomFamily(id))
   return (
     <>
      {todo.title}

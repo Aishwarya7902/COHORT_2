@@ -1,35 +1,26 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function useTodos() {
-  const [todos, setTodos] = useState([])
+function useIsOnline(){
+  const [isOnline,setIsOnline]=useState(window.navigator.onLine);
 
-  useEffect(() => {
-    axios.get("https://sum-server.100xdevs.com/todos")
-      .then(res => {
-        setTodos(res.data.todos);
-      })
-  }, [])
+  useEffect(()=>{
+    window.addEventListener('online',()=>setIsOnline(true));
+    window.addEventListener('offline',()=>setIsOnline(false));
+  },[]);
 
-  return todos;
+  return isOnline;
 }
 
 function App() {
-  const todos = useTodos();
+  const isOnline = useIsOnline();
 
   return (
     <>
-      {todos.map(todo => <Track todo={todo} />)}
+      {isOnline ? "Yay you are online" : "You are offline"}
     </>
   )
 }
 
-function Track({ todo }) {
-  return <div>
-    {todo.title}
-    <br />
-    {todo.description}
-  </div>
-}
 
 export default App

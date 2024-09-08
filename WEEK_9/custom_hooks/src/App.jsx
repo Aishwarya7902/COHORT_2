@@ -1,30 +1,32 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function useMousePointer(){
- const [mousePosition,setMousePosition]=useState({x:0,y:0})
- const handleMouseMove=(e)=>{
-   setMousePosition({
-    x:e.clientX,
-    y:e.clientY
-   })
- }
- 
- useEffect(()=>{
-  window.addEventListener('mousemove',handleMouseMove);
-  return ()=>{
-    window.removeEventListener('mousemove',handleMouseMove)
-  };
- },[])
- return mousePosition;
+function useDebounce(value,time){
+  const [debouncedValue,setDebounceValue]=useState(value);
+   useEffect(()=>{
+    let timeOutNumber=setTimeout(()=>{
+         setDebounceValue(value)
+    },time);
+
+    return ()=>{
+      clearTimeout(timeOutNumber);
+    }
+   },[value])
+
+   return debouncedValue
 }
 
 function App() {
-  const mousePosition = useMousePointer();
-
+  
+const [value,setValue]=useState(0);
+const debouncedValue=useDebounce(value,500);
   return (
     <>
-      Your mouse position is {mousePosition.x},{mousePosition.y}
+      Debounced Value is {debouncedValue}
+      <input type="text" placeholder='Enter value' 
+      onChange={(e)=>{
+        setValue(e.target.value);
+      }}/>
     </>
   )
 }

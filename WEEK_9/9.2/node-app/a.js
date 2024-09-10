@@ -1,8 +1,7 @@
 "use strict";
-function isLegal(age) {
-    if (age >= 18)
-        return true;
-    return false;
+function runAfter1S(fn) {
+    setTimeout(fn, 1000);
 }
-const legal = isLegal(20);
-console.log(legal);
+runAfter1S(function () {
+    console.log("Hi There");
+});

@@ -1,12 +1,12 @@
 "use strict";
-var Direction;
-(function (Direction) {
-    Direction["Up"] = "UP";
-    Direction["Down"] = "Down";
-    Direction["Left"] = "Left";
-    Direction["Right"] = "Right";
-})(Direction || (Direction = {}));
-function doSomething(keyPressed) {
-    // do something.
+function identity(arg) {
+    return arg;
 }
-doSomething(Direction.Down);
+let output1 = identity("myString");
+let output2 = identity(100);
+////////////////////////////////////////////////////////////
+function getFirstElement(arr) {
+    return arr[0];
+}
+const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+console.log(el.toLowerCase());

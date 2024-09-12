@@ -1,12 +1,14 @@
-enum Direction {
-    Up = "UP",
-    Down = "Down",
-    Left = "Left",
-    Right = 'Right'
+function identity<T>(arg: T): T {
+    return arg;
 }
 
-function doSomething(keyPressed: Direction) {
-	// do something.
+let output1 = identity<string>("myString");
+let output2 = identity<number>(100);
+////////////////////////////////////////////////////////////
+
+function getFirstElement<T>(arr: T[]) {
+    return arr[0];
 }
 
-doSomething(Direction.Down)
+const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+console.log(el.toLowerCase())

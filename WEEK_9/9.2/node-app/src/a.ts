@@ -1,7 +1,16 @@
-function runAfter1S(fn:()=>void){
-    setTimeout(fn,1000);
+interface User{
+  firstName:string,
+  lastName:string,
+  age:number
 }
 
-runAfter1S(function(){
-  console.log("Hi There")
+function isLegal(user:User){
+  if(user.age>18)return true;
+  return false;
+}
+
+isLegal({
+  firstName:"Sam",
+  lastName:"Altman",
+  age:20
 })

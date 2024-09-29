@@ -1,18 +1,13 @@
 
 import './App.css'
+import { RevenueCard } from './components/RevenueCard'
 
 function App() {
 
 
   return (
-    <div>
-      <div className='grid grid-cols-1 md:grid-cols-3'>
-      
-        <div className='bg-red-500 '>Hi from div 1</div>
-        <div className='bg-blue-500 '>Hi from div 1</div>
-        <div className='bg-green-500 '>Hi from div 1</div>
-      </div>
-
+    <div className='grid grid-cols-4'>
+       <RevenueCard  title={"Amount Pending"} amount={"92,310.40"} orderCount={13}/>
     </div>
   )
 }
